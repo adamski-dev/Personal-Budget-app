@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<title>Personal Finance</title>
+	<meta name="description" content="Control of personal finances">
+	<meta name="keywords" content="finance, budget, savings, income, expense">
+	<meta name="author" content="Adam Poplawski">
+	
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
+	
+	<link rel="stylesheet" href="main.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" type='text/css'>
+	
+	
+	<script>
+		window.onload = function() 
+		{
+			var chart = new CanvasJS.Chart("incomes_pie_chart", 
+				{
+
+					backgroundColor: "#11aaa3",
+					animationEnabled: true, 
+					theme: "light1",
+					title: 
+					{
+						text: "incomes summary",
+						fontSize: 22,
+						fontWeight: "bold",
+						fontColor: "black",
+						fontFamily: "tahoma",
+					},
+
+					data: [
+					{
+						type: "pie",
+						startAngle: 270,
+						yValueFormatString: "0.00\"%\"",
+						indexLabel: "{label} {y}",
+						dataPoints: 
+						
+						[
+							{y: 3453.50, label: "salary"},
+							{y: 344, label: "deposit interest"},
+							{y: 290.50, label: "sales"},
+							{y: 145, label: "other"}
+						]
+					}]
+				});
+				
+			chart.render();
+			var chart = new CanvasJS.Chart("expenses_pie_chart", 
+				{
+
+					backgroundColor: "#11aaa3",
+					animationEnabled: true,
+					theme: "light1",					
+					title: 
+					{
+						text: "expenses summary",
+						fontSize: 22,
+						fontWeight: "bold",
+						fontColor: "black",
+						fontFamily: "tahoma",
+					},
+
+					data: [
+					{
+						type: "pie",
+						startAngle: 117,
+						yValueFormatString: "0.00\"%\"",
+						indexLabel: "{label} {y}",
+						dataPoints: 
+						
+						[
+							{y: 34.15, label: "food"},
+							{y: 2.11, label: "rent"},
+							{y: 12.55, label: "house bills"},
+							{y: 34.5, label: "transport"},
+							{y: 20.50, label: "phone"},
+							{y: 156, label: "medical"},
+							{y: 65.6, label: "clothing"},
+							{y: 123, label: "hygiene"},
+							{y: 368, label: "children"},
+							{y: 34, label: "entertainment"},
+							{y: 67, label: "trips"},
+							{y: 564, label: "training"},
+							{y: 98, label: "books"},
+							{y: 112, label: "savings"},
+							{y: 345, label: "retirement"},
+							{y: 61, label: "mortgage"},
+							{y: 50, label: "donation"},
+							{y: 21.8, label: "other"},
+						]
+					}]
+				});
+				
+			chart.render();
+			
+		}
+	</script>
+	
+</head>
+
+<body>
+
+	<div id="balance_container">
+	
+		<main>
+	
+			<article>
+		
+				<fieldset style="border-radius: 10px;">
+					<legend class="balance_summary_action"> Balance summary </legend>
+						
+					<div class="balance_dates">
+						<label for="date_selector">Select date range </label>
+						<select id="date_selector" name="date_selector" required>
+							<option value="1" selected>current month</option>
+							<option value="2" >last month</option>
+							<option value="3">current year</option>
+							<option value="4">customized</option>
+						</select>
+					</div>
+					
+					<div class="balance" style="float:left;">
+							<label> Start date: <input type="date" name="balance_date1" placeholder="" onfocus="this.placeholder=''" onblur="this.placeholder=''" required></label>
+					</div>
+					<div class="balance" style="float:left; margin-left:280px;">
+							<label> End date: <input type="date" name="balance_date2" placeholder="" onfocus="this.placeholder=''" onblur="this.placeholder=''" required></label>
+					</div>
+					<div style="clear:both; padding-bottom:10px;"></div>
+					
+				<div id="incomes_table">
+			
+					<fieldset style="border-radius: 10px; width: 900px;">
+					
+						<legend class="balance_summary_action" > Incomes </legend>
+				
+						<div id="incomes_column1">
+							<div class="first_line"> Income type </div>
+							<div class="line"> salary </div>
+							<div class="line"> deposit interest </div>
+							<div class="line"> sales </div>
+							<div class="line"> other </div>
+							<div class="last_line"> Total </div>
+						</div>
+					
+						<div id="incomes_column2">
+							<div class="first_line"> Amount </div>
+							<div class="line"> 3453.00 </div>
+							<div class="line"> 344 </div>
+							<div class="line"> 290.50 </div>
+							<div class="line"> 145 </div>
+							<div class="last_line"> 4232.50 </div>
+						</div>
+					
+						<div id="incomes_pie_chart"></div>
+				
+					</fieldset>
+				
+					<div style="clear: both;"></div>
+			
+				</div>
+				
+				<div id="expenses_table">
+			
+					<fieldset style="border-radius: 10px; width: 900px;">
+					
+						<legend class="balance_summary_action" > Expenses </legend>
+				
+						<div id="expenses_column1">
+							<div class="first_line"> Expense type </div>
+							<div class="line"> food </div>
+							<div class="line"> rent </div>
+							<div class="line"> house bills </div>
+							<div class="line"> transport </div>
+							<div class="line"> phone </div>
+							<div class="line"> medical </div>
+							<div class="line"> clothing </div>
+							<div class="line"> hygine </div>
+							<div class="line"> children </div>
+							<div class="line"> entertainment </div>
+							<div class="line"> trips </div>
+							<div class="line"> training </div>
+							<div class="line"> books </div>
+							<div class="line"> savings </div>
+							<div class="line"> retirement </div>
+							<div class="line"> mortgage </div>
+							<div class="line"> donation </div>
+							<div class="line"> other </div>
+							<div class="last_line"> Total </div>
+						</div>
+					
+						<div id="expenses_column2">
+							<div class="first_line"> Amount </div>
+							<div class="line"> 3453.00 </div>
+							<div class="line"> 344 </div>
+							<div class="line"> 290.50 </div>
+							<div class="line"> 145 </div>
+							<div class="line"> 145 </div>
+							<div class="line"> 145 </div>
+							<div class="line"> 145 </div>
+							<div class="line"> 145 </div>
+							<div class="line"> 145 </div>
+							<div class="line"> 145 </div>
+							<div class="line"> 145 </div>
+							<div class="line"> 145 </div>
+							<div class="line"> 145 </div>
+							<div class="line"> 145 </div>
+							<div class="line"> 145 </div>
+							<div class="line"> 145 </div>
+							<div class="line"> 145 </div>
+							<div class="line"> 145 </div>
+							<div class="last_line"> 4232.50 </div>
+						</div>
+					
+						<div id="expenses_pie_chart"></div>
+						<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+				
+					</fieldset>
+				
+					<div style="clear: both;"></div>
+			
+				</div>
+				
+				    <footer>
+						<div id="balance_comment"> 
+							<p> Total balance for selected period: ??? green if positive, red if negative </p>
+						</div>
+					</footer>
+				</fieldset>
+					
+			</article>
+		    
+			
+
+		</main>
+	</div>
+</body>
+</html>

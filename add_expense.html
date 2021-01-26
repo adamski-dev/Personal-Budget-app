@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<title>Personal Finance</title>
+	<meta name="description" content="Control of personal finances">
+	<meta name="keywords" content="finance, budget, savings, income, expense">
+	<meta name="author" content="Adam Poplawski">
+	
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
+	
+	<link rel="stylesheet" href="main.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+	
+</head>
+
+<body>
+
+	<div id="expenses_container">
+	
+		<main>
+	
+			<article>
+		
+				<fieldset style="border-radius: 10px;">
+					
+					<legend class="add_expense_action"> Expense details entry </legend>
+				
+						<div class="expense">
+							<label> Amount: <input type="number" name="expense_amount" placeholder="0.00" onfocus="this.placeholder=''" onblur="this.placeholder='0.00'" step="custom" required></label>
+						</div>
+				        
+						<div class="expense">
+							<label> Date: <input type="date" name="expense_date" placeholder="0.00" onfocus="this.placeholder=''" onblur="this.placeholder=''" step="custom" required></label>
+						</div>
+						
+							<div class="expense_source_frame">
+							
+								<fieldset style="border-radius: 5px;">
+								
+									<legend> Expense reason </legend>
+										
+										<div class="expense_source">
+											<div class="payments">
+												<label for="payment_method"> payment method </label>
+												<select id="payment_method" name="payment_method">
+												
+													<option value="1">cash</option>
+													<option value="2" selected>debit card</option>
+													<option value="3">credit card</option>
+					
+												</select>
+											</div>											
+											
+											<div class="payments">
+												<label for="payment_reason"> reason </label>
+												<select id="payment_reason" name="payment_reason">
+													
+													<option value="1" selected>food</option>
+													<option value="2">rent</option>
+													<option value="3">house bills</option>
+													<option value="4">transport</option>
+													<option value="5">phone</option>
+													<option value="6">medical</option>
+													<option value="7">clothing</option>
+													<option value="8">hygiene</option>
+													<option value="9">children</option>
+													<option value="10">entertainment</option>
+													<option value="11">trip</option>
+													<option value="12">training</option>
+													<option value="13">books</option>
+													<option value="14">savings</option>
+													<option value="15">retirement</option>
+													<option value="16">mortgage</option>
+													<option value="17">donation</option>
+													<option value="18">other</option>
+					
+												</select>
+											</div>
+										</div>
+								
+
+									<div class="comments_frame">
+										<div><label for="comments"> comments </label></div>
+										<textarea name="income_comments" id="comments" rows="6" cols="30" ></textarea>
+									</div>
+								</fieldset>
+							
+							</div>
+							
+					<input class="expense_submit" type="submit" value="accept">
+				
+					<button class="expense_submit" onclick="window.location.href = '#'"> cancel </button>
+					
+				</fieldset>
+					
+			</article>
+		    
+			
+
+		</main>
+	</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<title>Personal Finance</title>
+	<meta name="description" content="Control of personal finances">
+	<meta name="keywords" content="finance, budget, savings, income, expense">
+	<meta name="author" content="Adam Poplawski">
+	
+	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
+	
+	<link rel="stylesheet" href="main.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+	
+</head>
+
+<body>
+
+	<div id="incomes_container">
+	
+		<main>
+	
+			<article>
+		
+				<fieldset style="border-radius: 10px;">
+					
+					<legend class="add_income_action"> Income details entry </legend>
+				
+						<div class="income">
+							<label> Amount: <input type="number" name="income_amount" placeholder="0.00" onfocus="this.placeholder=''" onblur="this.placeholder='0.00'" required></label>
+						</div>
+				        
+						<div class="income">
+							<label> Date: <input type="date" name="icome_date" placeholder="" onfocus="this.placeholder=''" onblur="this.placeholder=''" required></label>
+						</div>
+						
+							<div class="income_source_frame">
+							
+								<fieldset style="border-radius: 5px;">
+								
+									<legend> Source of income </legend>
+								
+										<div class="income_source"><label><input type="radio" value="1" name="income_source" checked> salary </label></div>
+										<div class="income_source"><label><input type="radio" value="2" name="income_source"> bank deposit interest </label></div>
+										<div class="income_source"><label><input type="radio" value="3" name="income_source"> private sale </label></div>
+										<div class="income_source"><label><input type="radio" value="3" name="income_source"> other </label></div>
+										
+										<div class="comments_frame">
+											<div><label for="comments"> comments </label></div>
+											<textarea name="income_comments" id="comments" rows="6" cols="30" ></textarea>
+										</div>
+							
+								</fieldset>
+							
+							</div>
+							
+							<input class="income_submit" type="submit" value="accept"/>
+				
+							<button class="income_submit" onclick="window.location.href = '#'" value="income_cancelled"> cancel </button>						
+							
+				</fieldset>
+					
+			</article>
+		    
+			
+
+		</main>
+	</div>
+</body>
+</html>
