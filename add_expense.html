@@ -3,6 +3,8 @@
 <head>
 
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
 	<title>Personal Finance</title>
 	<meta name="description" content="Control of personal finances">
 	<meta name="keywords" content="finance, budget, savings, income, expense">
@@ -10,102 +12,144 @@
 	
 	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
 	
+	<link rel="stylesheet" href="css/lock.css" type="text/css" >
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="main.css">
-
-	<link href='http://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	
+	
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	
+	
 	<!--[if lt IE 9]>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<![endif]-->
 	
 </head>
 
 <body>
 
-	<div id="expenses_container">
+
+	<header>
+	
+		<nav class="navbar navbar-light bg-color navbar-expand-md p-3">
+		
+			<a class="navbar-brand" href="index.html" target="_blank">Smart Finance</a>
+			
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav_menu" aria-controls="nav_menu" aria-expanded="false" aria-label="navigation switch">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="nav_menu">
+				
+				<ul class="navbar-nav mr-auto">
+				
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'add_income.html';">Add income</button>
+					</li>					
+					
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'add_expense.html';">Add expense</button>
+					</li>					
+					
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'balance.html';">Balance</button>
+					</li>					
+					
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'main_menu.html';">Settings</button>
+					</li>					
+					
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'index.html';">Log out</button>
+					</li>
+				
+				</ul>
+				
+				
+				
+			</div>
+			
+		</nav>
+		
+	</header>
 	
 		<main>
-	
-			<article>
 		
-				<fieldset style="border-radius: 10px;">
+			
+			<section>
+			
+				<div class="container">
 					
-					<legend class="add_expense_action"> Expense details entry </legend>
+					<div class="incomes_container">
+					
+							<h4>Expense details entry</h4>
 				
-						<div class="expense">
-							<label> Amount: <input type="number" name="expense_amount" placeholder="0.00" onfocus="this.placeholder=''" onblur="this.placeholder='0.00'" step="custom" required></label>
-						</div>
-				        
-						<div class="expense">
-							<label> Date: <input type="date" name="expense_date" placeholder="0.00" onfocus="this.placeholder=''" onblur="this.placeholder=''" step="custom" required></label>
-						</div>
-						
-							<div class="expense_source_frame">
-							
-								<fieldset style="border-radius: 5px;">
-								
-									<legend> Expense reason </legend>
-										
-										<div class="expense_source">
-											<div class="payments">
-												<label for="payment_method"> payment method </label>
-												<select id="payment_method" name="payment_method">
-												
-													<option value="1">cash</option>
-													<option value="2" selected>debit card</option>
-													<option value="3">credit card</option>
-					
-												</select>
-											</div>											
-											
-											<div class="payments">
-												<label for="payment_reason"> reason </label>
-												<select id="payment_reason" name="payment_reason">
-													
-													<option value="1" selected>food</option>
-													<option value="2">rent</option>
-													<option value="3">house bills</option>
-													<option value="4">transport</option>
-													<option value="5">phone</option>
-													<option value="6">medical</option>
-													<option value="7">clothing</option>
-													<option value="8">hygiene</option>
-													<option value="9">children</option>
-													<option value="10">entertainment</option>
-													<option value="11">trip</option>
-													<option value="12">training</option>
-													<option value="13">books</option>
-													<option value="14">savings</option>
-													<option value="15">retirement</option>
-													<option value="16">mortgage</option>
-													<option value="17">donation</option>
-													<option value="18">other</option>
-					
-												</select>
-											</div>
-										</div>
-								
-
-									<div class="comments_frame">
-										<div><label for="comments"> comments </label></div>
-										<textarea name="income_comments" id="comments" rows="6" cols="30" ></textarea>
-									</div>
-								</fieldset>
-							
+						<form>
+							  <div class="form-group">
+								<label for="income_amount_input">Amount</label>
+								<input type="number" class="form-control form-control-sm" id="income_amount_input" placeholder="enter amount here">
+							  </div>
+							  <div class="form-group">
+								<label for="income_date_input">Date</label>
+								<input type="date" class="form-control form-control-sm mb-4" id="income_date_input">
+							  </div>
+							  
+							<div class="form-group">
+								<label for="payment_method_selection">Payment method</label>
+								<select class="form-control form-control-sm" id="payment_method_selection">
+									 <option>cash</option>
+									 <option selected>debit card</option>
+									 <option>credit card</option>
+								</select>
 							</div>
 							
-					<input class="expense_submit" type="submit" value="accept">
-				
-					<button class="expense_submit" onclick="window.location.href = '#'"> cancel </button>
+							<div class="form-group">
+								<label for="payment_reason_selection">Payment reason</label>
+								<select class="form-control form-control-sm" id="payment_reason_selection">
+									 <option selected>food</option>
+									 <option>rent</option>
+									 <option>house bills</option>
+									 <option>transport</option>
+									 <option>phone</option>
+									 <option>medical</option>
+									 <option>clothing</option>
+									 <option>hygine</option>
+									 <option>children</option>
+									 <option>entertainment</option>
+									 <option>trips</option>
+									 <option>training</option>
+									 <option>books</option>
+									 <option>savings</option>
+									 <option>retirement</option>
+									 <option>mortgage</option>
+									 <option>donation</option>
+									 <option>other</option>
+								</select>
+							</div>
+								
+							  <div class="form-group">
+								<label for="comments_field">Comments</label>
+								<textarea class="form-control form-control-sm mt-2 mb-4" id="comments_field" rows="4"></textarea>
+							  </div>
+							  
+							<button class="btn btn-color_custom ml-4 mr-5" type="submit">Confirm</button>
+							<button class="btn btn-warning" type="reset" onclick="window.location.href = 'main_menu.html';">Cancel</button>
+							  
+						</form>
+						
+					</div>
 					
-				</fieldset>
-					
-			</article>
-		    
+				</div>
 			
-
+			</section>
+	
 		</main>
-	</div>
+		
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	
+	<script src="js/bootstrap.min.js"></script>
+	
 </body>
 </html>

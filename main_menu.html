@@ -3,6 +3,8 @@
 <head>
 
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
 	<title>Personal Finance</title>
 	<meta name="description" content="Control of personal finances">
 	<meta name="keywords" content="finance, budget, savings, income, expense">
@@ -10,42 +12,76 @@
 	
 	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
 	
+	<link rel="stylesheet" href="css/lock.css" type="text/css" >
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="main.css">
-
-	<link href='http://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	
+	
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	
+	
 	<!--[if lt IE 9]>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<![endif]-->
 	
 </head>
 
 <body>
 
-	<div id="main_menu_container">
+
+	<header>
+	
+		<nav class="navbar navbar-light bg-color navbar-expand-md p-3">
+		
+			<a class="navbar-brand" href="index.html" target="_blank">Smart Finance</a>
+			
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav_menu" aria-controls="nav_menu" aria-expanded="false" aria-label="navigation switch">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="nav_menu">
+				
+				<ul class="navbar-nav mr-auto">
+				
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'add_income.html';">Add income</button>
+					</li>					
+					
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'add_expense.html';">Add expense</button>
+					</li>					
+					
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'balance.html';">Balance</button>
+					</li>					
+					
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'main_menu.html';">Settings</button>
+					</li>					
+					
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'index.html';">Log out</button>
+					</li>
+				
+				</ul>
+				
+				
+				
+			</div>
+			
+		</nav>
+		
+	</header>
 	
 		<main>
-		
-			<header> <div class="main_menu_action"> Select from options below </div> </header>
 	
-			<article>
-		
-				<button class="main_menu" onclick="window.location.href = 'add_income.html';">add income</button>
-		
-				<button class="main_menu" onclick="window.location.href = 'add_expense.html';">add expense</button>
-		
-				<button class="main_menu" onclick="window.location.href = 'balance.html';">balance</button>
-		
-				<button class="main_menu" onclick="window.location.href = 'index.html';">settings</button>
-		
-				<button class="main_menu" onclick="window.location.href = 'index.html';">log-out</button>
-					
-			</article>
-		    
-			
-
 		</main>
-	</div>
+		
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	
+	<script src="js/bootstrap.min.js"></script>
+	
 </body>
 </html>

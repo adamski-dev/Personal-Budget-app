@@ -10,9 +10,11 @@
 	
 	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
 	
-	<link rel="stylesheet" href="main.css">
-
-	<link href='http://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="main.css" />
+	<link rel="stylesheet" href="css/lock.css" type="text/css" />
+	
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" type='text/css' />
 	
 	<!--[if lt IE 9]>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -21,31 +23,51 @@
 </head>
 
 <body>
-	<div id="signup_container">
-	
+
 		<main>
 	
-			<article>
+			<section class="login_container">
 		
-				<div>
-					<form>
-			
-						<input type="text" placeholder="name" onfocus="this.placeholder=''" onblur="this.placeholder='name'" >
+				<div class="container">
+				
+					<header>
+					
+						<h1> Achieve your financial goals with Smart Finance </h1>
 						
-						<input type="email" placeholder="email address" onfocus="this.placeholder=''" onblur="this.placeholder='email address'" >
-			
-						<input type="password" placeholder="password" onfocus="this.placeholder=''" onblur="this.placeholder='password'" >
+					</header>
+					
+					<div class="row">
+					
+						<div class="col-md-4">
 						
-						<input type="password" placeholder="confirm password" onfocus="this.placeholder=''" onblur="this.placeholder='password'" >
-			
-						<input type="submit" value="Sign-up">  
-			
-					</form>
+							<form>
+							
+								<input type="text" placeholder="&#xe800;   Name" style="font-family: 'lock';" onfocus="this.placeholder=''" onblur="this.placeholder='&#xe800;   Name'">
+								<input type="email" placeholder="&#xe803;   Email address" style="font-family: 'lock';" onfocus="this.placeholder=''" onblur="this.placeholder='&#xe803;   Email address'">
+								<input type="password" placeholder= "&#xe804;   Password" style="font-family: 'lock';" onfocus="this.placeholder=''" onblur="this.placeholder='&#xe804;   Password'" > 
+								<input type="password" placeholder= "&#xe804;   Confirm password" style="font-family: 'lock';" onfocus="this.placeholder=''" onblur="this.placeholder='&#xe804;   Confirm password'" > 
+								<input type="submit" value="Sign-up">  
+							
+							</form>
+					
+							<footer>
+								<div id="back_to_home_page"><a href="index.html" style="color: #000;"> Back to home page </a></div>
+							</footer>
+						
+						</div>
+						
+					</div>
+					
 				</div>
-			
-			</article>
-		   
+				
+			</section>
 		</main>
-	</div>
+		
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	
+	<script src="js/bootstrap.min.js"></script>
+	
 </body>
 </html>

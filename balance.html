@@ -3,6 +3,8 @@
 <head>
 
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
 	<title>Personal Finance</title>
 	<meta name="description" content="Control of personal finances">
 	<meta name="keywords" content="finance, budget, savings, income, expense">
@@ -10,11 +12,17 @@
 	
 	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
 	
+	<link rel="stylesheet" href="css/lock.css" type="text/css" >
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="main.css">
-
-	<link href='http://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" type='text/css'>
 	
+	
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	
+	
+	<!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
 	
 	<script>
 		window.onload = function() 
@@ -22,16 +30,16 @@
 			var chart = new CanvasJS.Chart("incomes_pie_chart", 
 				{
 
-					backgroundColor: "#11aaa3",
+					backgroundColor: "transparent",
 					animationEnabled: true, 
 					theme: "light1",
 					title: 
 					{
 						text: "incomes summary",
-						fontSize: 22,
+						fontSize: 18,
 						fontWeight: "bold",
 						fontColor: "black",
-						fontFamily: "tahoma",
+						fontFamily: "roboto",
 					},
 
 					data: [
@@ -55,16 +63,16 @@
 			var chart = new CanvasJS.Chart("expenses_pie_chart", 
 				{
 
-					backgroundColor: "#11aaa3",
+					backgroundColor: "transparent",
 					animationEnabled: true,
 					theme: "light1",					
 					title: 
 					{
 						text: "expenses summary",
-						fontSize: 22,
+						fontSize: 18,
 						fontWeight: "bold",
 						fontColor: "black",
-						fontFamily: "tahoma",
+						fontFamily: "roboto",
 					},
 
 					data: [
@@ -98,147 +106,218 @@
 					}]
 				});
 				
-			chart.render();
-			
+			chart.render();	
 		}
+	</script>
+	<script>
+	// Data Picker Initialization
+	$('.datepicker').pickadate();
 	</script>
 	
 </head>
 
 <body>
 
-	<div id="balance_container">
+
+	<header>
+	
+		<nav class="navbar navbar-light bg-color navbar-expand-md p-3">
+		
+			<a class="navbar-brand" href="index.html" target="_blank">Smart Finance</a>
+			
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav_menu" aria-controls="nav_menu" aria-expanded="false" aria-label="navigation switch">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="nav_menu">
+				
+				<ul class="navbar-nav mr-auto">
+				
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'add_income.html';">Add income</button>
+					</li>					
+					
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'add_expense.html';">Add expense</button>
+					</li>					
+					
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'balance.html';">Balance</button>
+					</li>					
+					
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'main_menu.html';">Settings</button>
+					</li>					
+					
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'index.html';">Log out</button>
+					</li>
+				
+				</ul>
+				
+				
+				
+			</div>
+			
+		</nav>
+		
+	</header>
 	
 		<main>
-	
-			<article>
 		
-				<fieldset style="border-radius: 10px;">
-					<legend class="balance_summary_action"> Balance summary </legend>
+			
+			<section>
+			
+				<div class="container">
+					
+					<div class="raw">
 						
-					<div class="balance_dates">
-						<label for="date_selector">Select date range </label>
-						<select id="date_selector" name="date_selector" required>
-							<option value="1" selected>current month</option>
-							<option value="2" >last month</option>
-							<option value="3">current year</option>
-							<option value="4">customized</option>
-						</select>
+						<form>
+							<div class="balance_container">
+								
+								<h4 style="margin-bottom: 30px; border-bottom-color: #17a2b8; padding: 5px 0;">Balance summary</h4>
+								
+								<!-- Button trigger modal -->
+								<button type="button" class="btn btn-info mb-2" data-toggle="modal" data-target="#dates_selection">
+								Select date range for summary
+								</button>					
+								
+								<div class="incomes_balance">
+								
+										<h3>Incomes</h3>
+										
+							
+										<div id="incomes_column1">
+											<div class="first_line bg-info"> Category </div>
+											<div class="line"> salary </div>
+											<div class="line"> deposit interest </div>
+											<div class="line"> sales </div>
+											<div class="line"> other </div>
+											<div class="last_line bg-info"> Total </div>
+										</div>
+									
+										<div id="incomes_column2">
+											<div class="first_line bg-info"> Amount </div>
+											<div class="line"> 3453.00 </div>
+											<div class="line"> 344 </div>
+											<div class="line"> 290.50 </div>
+											<div class="line"> 145 </div>
+											<div class="last_line bg-info"> 4232.50 </div>
+										</div>	
+										
+								</div>
+								
+								<div class="incomes_balance_summary">
+									<div id="incomes_pie_chart"></div>
+									<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+								</div>
+								
+								<div class="expenses_balance">
+										<h3>Expenses</h3>
+										
+										<div id="expenses_column1">
+											<div class="first_line bg-info"> Category </div>
+											<div class="line"> food </div>
+											<div class="line"> rent </div>
+											<div class="line"> house bills </div>
+											<div class="line"> transport </div>
+											<div class="line"> phone </div>
+											<div class="line"> medical </div>
+											<div class="line"> clothing </div>
+											<div class="line"> hygine </div>
+											<div class="line"> children </div>
+											<div class="line"> entertainment </div>
+											<div class="line"> trips </div>
+											<div class="line"> training </div>
+											<div class="line"> books </div>
+											<div class="line"> savings </div>
+											<div class="line"> retirement </div>
+											<div class="line"> mortgage </div>
+											<div class="line"> donation </div>
+											<div class="line"> other </div>
+											<div class="last_line bg-info"> Total </div>
+										</div>
+									
+										<div id="expenses_column2">
+											<div class="first_line bg-info"> Amount </div>
+											<div class="line"> 3453.00 </div>
+											<div class="line"> 344 </div>
+											<div class="line"> 290.50 </div>
+											<div class="line"> 145 </div>
+											<div class="line"> 145 </div>
+											<div class="line"> 145 </div>
+											<div class="line"> 145 </div>
+											<div class="line"> 145 </div>
+											<div class="line"> 145 </div>
+											<div class="line"> 145 </div>
+											<div class="line"> 145 </div>
+											<div class="line"> 145 </div>
+											<div class="line"> 145 </div>
+											<div class="line"> 145 </div>
+											<div class="line"> 145 </div>
+											<div class="line"> 145 </div>
+											<div class="line"> 145 </div>
+											<div class="line"> 145 </div>
+											<div class="last_line bg-info"> 4232.50 </div>
+										</div>
+													
+								</div>
+								
+								<div class="expenses_balance_summary">
+									<div id="expenses_pie_chart"></div>
+									<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+								</div>
+							</div>	
+						</form>
+					
 					</div>
-					
-					<div class="balance" style="float:left;">
-							<label> Start date: <input type="date" name="balance_date1" placeholder="" onfocus="this.placeholder=''" onblur="this.placeholder=''" required></label>
-					</div>
-					<div class="balance" style="float:left; margin-left:280px;">
-							<label> End date: <input type="date" name="balance_date2" placeholder="" onfocus="this.placeholder=''" onblur="this.placeholder=''" required></label>
-					</div>
-					<div style="clear:both; padding-bottom:10px;"></div>
-					
-				<div id="incomes_table">
-			
-					<fieldset style="border-radius: 10px; width: 900px;">
-					
-						<legend class="balance_summary_action" > Incomes </legend>
-				
-						<div id="incomes_column1">
-							<div class="first_line"> Income type </div>
-							<div class="line"> salary </div>
-							<div class="line"> deposit interest </div>
-							<div class="line"> sales </div>
-							<div class="line"> other </div>
-							<div class="last_line"> Total </div>
-						</div>
-					
-						<div id="incomes_column2">
-							<div class="first_line"> Amount </div>
-							<div class="line"> 3453.00 </div>
-							<div class="line"> 344 </div>
-							<div class="line"> 290.50 </div>
-							<div class="line"> 145 </div>
-							<div class="last_line"> 4232.50 </div>
-						</div>
-					
-						<div id="incomes_pie_chart"></div>
-				
-					</fieldset>
-				
-					<div style="clear: both;"></div>
-			
 				</div>
-				
-				<div id="expenses_table">
+			</section>
 			
-					<fieldset style="border-radius: 10px; width: 900px;">
+			<!-- Modal -->
+			<div class="modal fade" id="dates_selection" tabindex="-1" role="dialog">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
 					
-						<legend class="balance_summary_action" > Expenses </legend>
-				
-						<div id="expenses_column1">
-							<div class="first_line"> Expense type </div>
-							<div class="line"> food </div>
-							<div class="line"> rent </div>
-							<div class="line"> house bills </div>
-							<div class="line"> transport </div>
-							<div class="line"> phone </div>
-							<div class="line"> medical </div>
-							<div class="line"> clothing </div>
-							<div class="line"> hygine </div>
-							<div class="line"> children </div>
-							<div class="line"> entertainment </div>
-							<div class="line"> trips </div>
-							<div class="line"> training </div>
-							<div class="line"> books </div>
-							<div class="line"> savings </div>
-							<div class="line"> retirement </div>
-							<div class="line"> mortgage </div>
-							<div class="line"> donation </div>
-							<div class="line"> other </div>
-							<div class="last_line"> Total </div>
+						<div class="modal-header">
+							<h5 class="modal-title" id="date_from">Date from</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+						</div>
+						
+							<div class="modal-body">
+								<input type="date" id="date_from_picker" class="form-control datepicker">
+							</div>
+							
+						<div class="modal-header">
+							<h5 class="modal-title" id="date_to">Date to</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"> </button>
+						</div>
+						
+							<div class="modal-body">
+								<input type="date" id="date_to_picker" class="form-control datepicker">
+							</div>
+					  
+					  
+						<div class="modal-footer">
+							
+							<button type="button" class="btn btn-info">Save</button>
+							<button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
+							
 						</div>
 					
-						<div id="expenses_column2">
-							<div class="first_line"> Amount </div>
-							<div class="line"> 3453.00 </div>
-							<div class="line"> 344 </div>
-							<div class="line"> 290.50 </div>
-							<div class="line"> 145 </div>
-							<div class="line"> 145 </div>
-							<div class="line"> 145 </div>
-							<div class="line"> 145 </div>
-							<div class="line"> 145 </div>
-							<div class="line"> 145 </div>
-							<div class="line"> 145 </div>
-							<div class="line"> 145 </div>
-							<div class="line"> 145 </div>
-							<div class="line"> 145 </div>
-							<div class="line"> 145 </div>
-							<div class="line"> 145 </div>
-							<div class="line"> 145 </div>
-							<div class="line"> 145 </div>
-							<div class="line"> 145 </div>
-							<div class="last_line"> 4232.50 </div>
-						</div>
-					
-						<div id="expenses_pie_chart"></div>
-						<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-				
-					</fieldset>
-				
-					<div style="clear: both;"></div>
-			
-				</div>
-				
-				    <footer>
-						<div id="balance_comment"> 
-							<p> Total balance for selected period: ??? green if positive, red if negative </p>
-						</div>
-					</footer>
-				</fieldset>
-					
-			</article>
-		    
-			
+					</div>
 
+				</div>
+			</div>
+			<!-- Modal -->
 		</main>
-	</div>
+		
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	
+	<script src="js/bootstrap.min.js"></script>
+	
+	
 </body>
-</html>
+</html>													

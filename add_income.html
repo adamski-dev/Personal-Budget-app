@@ -3,6 +3,8 @@
 <head>
 
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
 	<title>Personal Finance</title>
 	<meta name="description" content="Control of personal finances">
 	<meta name="keywords" content="finance, budget, savings, income, expense">
@@ -10,68 +12,121 @@
 	
 	<meta http-equiv="X-Ua-Compatible" content="IE=edge">
 	
+	<link rel="stylesheet" href="css/lock.css" type="text/css" >
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="main.css">
-
-	<link href='http://fonts.googleapis.com/css?family=Lato:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	
+	
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	
+	
 	<!--[if lt IE 9]>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<![endif]-->
 	
 </head>
 
 <body>
 
-	<div id="incomes_container">
+
+	<header>
+	
+		<nav class="navbar navbar-light bg-color navbar-expand-md p-3">
+		
+			<a class="navbar-brand" href="index.html" target="_blank">Smart Finance</a>
+			
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav_menu" aria-controls="nav_menu" aria-expanded="false" aria-label="navigation switch">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="nav_menu">
+				
+				<ul class="navbar-nav mr-auto">
+				
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'add_income.html';">Add income</button>
+					</li>					
+					
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'add_expense.html';">Add expense</button>
+					</li>					
+					
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'balance.html';">Balance</button>
+					</li>					
+					
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'main_menu.html';">Settings</button>
+					</li>					
+					
+					<li class="nav-item ml-auto mr-auto">
+						<button class="menu_button" onclick="window.location.href = 'index.html';">Log out</button>
+					</li>
+				
+				</ul>
+				
+				
+				
+			</div>
+			
+		</nav>
+		
+	</header>
 	
 		<main>
-	
-			<article>
 		
-				<fieldset style="border-radius: 10px;">
-					
-					<legend class="add_income_action"> Income details entry </legend>
-				
-						<div class="income">
-							<label> Amount: <input type="number" name="income_amount" placeholder="0.00" onfocus="this.placeholder=''" onblur="this.placeholder='0.00'" required></label>
-						</div>
-				        
-						<div class="income">
-							<label> Date: <input type="date" name="icome_date" placeholder="" onfocus="this.placeholder=''" onblur="this.placeholder=''" required></label>
-						</div>
-						
-							<div class="income_source_frame">
-							
-								<fieldset style="border-radius: 5px;">
-								
-									<legend> Source of income </legend>
-								
-										<div class="income_source"><label><input type="radio" value="1" name="income_source" checked> salary </label></div>
-										<div class="income_source"><label><input type="radio" value="2" name="income_source"> bank deposit interest </label></div>
-										<div class="income_source"><label><input type="radio" value="3" name="income_source"> private sale </label></div>
-										<div class="income_source"><label><input type="radio" value="3" name="income_source"> other </label></div>
-										
-										<div class="comments_frame">
-											<div><label for="comments"> comments </label></div>
-											<textarea name="income_comments" id="comments" rows="6" cols="30" ></textarea>
-										</div>
-							
-								</fieldset>
-							
-							</div>
-							
-							<input class="income_submit" type="submit" value="accept"/>
-				
-							<button class="income_submit" onclick="window.location.href = '#'" value="income_cancelled"> cancel </button>						
-							
-				</fieldset>
-					
-			</article>
-		    
 			
-
+			<section>
+			
+				<div class="container">
+					
+					<div class="incomes_container">
+					
+							<h4>Income details entry</h4>
+				
+						<form>
+							  <div class="form-group">
+								<label for="income_amount_input">Amount</label>
+								<input type="number" class="form-control form-control-sm" id="income_amount_input" placeholder="enter amount here">
+							  </div>
+							  <div class="form-group">
+								<label for="income_date_input">Date</label>
+								<input type="date" class="form-control form-control-sm mb-4" id="income_date_input">
+							  </div>
+							  
+							<div class="form-group">
+								<label for="source_of_income_selection">Source of income</label>
+								<select class="form-control form-control-sm" id="source_of_income_selection">
+									 <option selected>salary</option>
+									 <option>bank deposit interest</option>
+									 <option>private sale</option>
+									 <option>other</option>
+								</select>
+							</div>								
+								
+							  <div class="form-group">
+								<label for="comments_field">Comments</label>
+								<textarea class="form-control form-control-sm mt-2 mb-4" id="comments_field" rows="4"></textarea>
+							  </div>
+							  
+							<button class="btn btn-color_custom ml-4 mr-5" type="submit">Confirm</button>
+							<button class="btn btn-warning" type="reset" onclick="window.location.href = 'main_menu.html';">Cancel</button>
+							  
+						</form>
+						
+					</div>
+					
+				</div>
+			
+			</section>
+	
 		</main>
-	</div>
+		
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	
+	<script src="js/bootstrap.min.js"></script>
+	
 </body>
 </html>
